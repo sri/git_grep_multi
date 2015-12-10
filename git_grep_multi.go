@@ -62,5 +62,9 @@ func main() {
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		cmd.Run()
+		if err = os.Chdir(cwd); err != nil {
+			fmt.Println("error:", err)
+			os.Exit(1)
+		}
 	}
 }
